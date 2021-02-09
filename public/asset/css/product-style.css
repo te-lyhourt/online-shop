@@ -1,0 +1,212 @@
+.product-container
+{
+
+  width: 90%;
+}
+/* product-detail-section */
+.product-detail
+{
+  position : relative;
+  border: solid 4px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  margin: 20px auto 25px;
+  background-color: white;
+}
+.section-left
+{
+  width: 40%;
+  float: left;
+  text-align: center;
+  border-right: solid #DCDCDC 4px;
+  margin: 30px auto;
+}
+.Big-image
+{
+  width: 200px;
+  position: relative;
+  bottom: 30px;
+}
+.small-image
+{
+  width: 20%;
+  border: solid #DCDCDC 4px;
+}
+.img-row
+{
+  justify-content: space-around;
+}
+
+.section-right
+{
+  width: 70%;
+  float: right;
+  text-align:left;
+  margin: 30px;
+}
+.description
+{
+  padding-bottom: 20px;
+}
+.discount-detail
+{
+  text-align: right;
+  position: relative;
+  right: 20px;
+}
+.button-container
+{
+  margin-top: 100px;
+}
+/* tag */
+.tag-row
+{
+  margin: 20px 0;
+}
+/* change tag color */
+.btn-light
+{
+  background-color: #DCDCDC;
+  border-radius: 12px;
+}
+
+.price
+{
+  display: inline-block;
+} 
+.prices-tag
+{
+  text-align: right;
+  position: relative;
+  bottom: 35px;
+}
+
+/* command-section */
+.comment-title
+{
+  margin: 20px 0;
+}
+.comment-container
+{
+  border: solid #DCDCDC 4px;
+  padding: 20px;
+}
+.comment-infor
+{
+  display: flex;
+}
+.comment-tag
+{
+  margin-left : 20px;
+}
+.Date
+{
+  color: #A9A9A9;
+}
+
+.input-container
+{
+  width: 100%;
+  padding: 0;
+  margin: 20px 0 ;
+  background-color: white;
+}
+
+.comment-input
+{
+  display: flex;
+  border: solid 4px;
+  height: 200px;
+}
+legend
+{
+  display: inline-block;
+  width: auto;
+  padding: 0 10px;
+  margin: 0 50px ;
+}
+.comment-box
+{
+  flex:1;
+  border: none;
+  outline: none;
+  padding: 0 30px;
+}
+@media (max-width : 1028px)
+{
+  .product-container
+  {
+    margin: 0;
+  }
+  .product-detail
+  {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .section-left
+  {
+    width: 100%;
+    border: none;
+  }
+  .section-right
+  {
+    margin: 0 auto;
+  }
+  .top-row
+  {
+    display: block;
+  }
+  .button-container
+  {
+    margin-top: 0;
+  }
+  .tag-left , .tag-right
+  {
+    padding: 5px 10px;
+  }
+  .btn
+  {
+    font-size: 0.75rem;
+  }
+  .prices-tag
+  {
+    text-align: left;
+    position: static;
+  }
+}
+
+/* send and discard */
+.buttons-container
+{
+  width: 90%;
+  display: flex;
+  margin: 0 0 25px;
+  justify-content: flex-end;
+}
+.Send
+{
+  color: white;
+  background-color: #4CAF50;
+  padding: 0 10px;
+  margin: 0 10px;
+}
+.Send:hover
+{
+  box-shadow: 0 20px 20px rgb(0,0,0,0.2) , 0 50px 50px rgb(0,0,0,0.2);
+  color: black;
+}
+.Discard
+{
+  padding: 0 10px;
+  border: solid black;
+}
+
+.Discard:hover
+{
+  box-shadow: 0 20px 20px rgb(0,0,0,0.2) , 0 50px 50px rgb(0,0,0,0.2);
+  background-color: black;
+  color: white;
+}

@@ -1,0 +1,58 @@
+body{
+    padding: 0;
+    margin: 0;
+    background-color: #DCDCDC;
+    font-family: 'Concert One', sans-serif;
+    font-size: 1.15rem;
+}
+
+.signbox
+{
+    top : 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50% , -40%);
+    margin-top: 40px;
+    margin: 0 auto ;
+    text-align: center;
+    
+    /* width: 80%; */
+}
+
+.top{
+    background-color: white;
+    border: solid black;
+    padding: 30px 70px;
+    text-align: left;
+}
+
+.text{
+    margin: 20px auto;
+    text-align: center;
+}
+
+.signbox-text{
+    color: gray;
+    width: 65%;
+    margin: 30px auto;
+}
+.long-box{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+button,.btn{
+    margin-top: 20px;
+    border: solid black;
+    box-shadow: 10px 5px 5px 0 rgb(0,0,0,0.7) ;
+}
+
+input{
+    border: solid 2px;
+}
+
+.sign-up{
+    margin-top: 20px ;
+    margin-bottom: 40px;
+}
+

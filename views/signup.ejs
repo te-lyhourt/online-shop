@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Shopping</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="asset/css/login.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript" src="asset/js/checkbox.js"></script>
+</head>
+<body>
+  <div class="signbox">
+    <div class="top">
+      <div class="text">
+        <h1>Welcome to Awesome Shop</h1>
+        <p class="signbox-text">Dont have an account ? Create your own account ,it take less than a minute </p>
+      </div>
+      
+
+      <form action="http://localhost:3000/signUp" method="POST">
+        <p>Username</p> <input class="long-box" type="text" name="username" /> <br/>
+        <p>Email address</p> <input class="long-box"  type="text" name="email" /> <br/>
+        <p>Password</p> <input class="long-box"  type="password" name="password" /> <br/>
+        <p>Confirm Password</p> <input class="long-box" type="password" name="conpassword" /> <br/>
+        <div class="checkbox"><input  type="checkbox" id="term" name="term" > I accept Terms and Conditions <br> </div>
+        <button class="long-box btn btn-primary" type="submit" id="submit" disabled>Sign Up</button> 
+      </form>
+    </div>
+    
+    <p class="sign-up">Already have account ? <a href="">sign in</a></p>
+    <p class="copy-right">2021 © Awesome Shop by Lyhourt</p>
+  </div>
+  
+  <!--boostrap script-->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+</body>
+</html>
