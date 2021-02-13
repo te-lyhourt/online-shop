@@ -100,18 +100,24 @@
             <button data-close-button class="close-button" >&times;</button>
         </div>
         <div class="body">
-            <form action="">
-                <p>Product Name</p> <input class="long-box"  type="text" name="pname" /> <br/>
-                <p>Detail</p> <input class="long-box"  type="text" name="pdetail" /> <br/>
-                <p>Qty</p> <input class="long-box"  type="number" name="pqty" /> <br/>
-
-                <p>catagory</p><input list="catagorys" name="catagory" id="catagory">
-                <datalist id="catagorys">
-                  <option value="Bag">
-                  <option value="Cloth">
-                  <option value="Electronic">
-                  <option value="Wallet">
-                </datalist> <br/>
+            <form action="http://localhost:3000/admin" method="POST" enctype="multipart/form-data">
+                <div class="long-box">Product Name:<input   type="text" name="pname" /> <br/></div>
+                <div class="long-box">Price:<input type="number" name="pprice" min="0.01" step="0.01"/> <br></div>
+                <div class="long-box">Qty:<input type="number" name="pqty" min="0" step="1"/><br></div>
+                <div class="long-box">Discount:<input type="number" name="discount" min="0"/><br></div>
+                <div class="long-box">Detail:<input   type="text" name="pdetail" /> <br/></div>
+                <div class="long-box">catagory:<input list="catagorys" name="pcatagory" id="catagory">
+                    <datalist id="catagorys">
+                      <option value="Bag">
+                      <option value="Cloth">
+                      <option value="Electronic">
+                      <option value="Wallet">
+                    </datalist> <br/>
+                </div>
+                <div class="long-box">Upload Image:<input type="file" id="Uploadimage" name="pimg"><br></div>
+                <!-- <div class="long-box">Password:<input  type="password" name="admin-password" /> <br/></div> -->
+                
+                
                 <button class="long-box btn btn-primary submit" type="submit">Add Product</button>
             </form>
         </div>

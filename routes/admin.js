@@ -7,11 +7,11 @@ const postController = require('../controllers/postController')
 // var storage = multer.diskStorage({
 //     //folder where u store image
 //     destination: (req, file, cb) => {
-//         cb(null, 'publice/asset/photo')
+//         cb(null, 'publice/asset/upload')
 //     },
 //     //name of the image
 //     filename: (req, file, cb) => {
-//         cb(null, file.fieldname + '-' + Date.now())
+//         cb(null, file.fieldname + ' - ' + Date.now())
 //     }
 // });
  
@@ -32,18 +32,20 @@ router.get('/product',(req,res)=>{
 });
 
 router.get('/signIn', (req, res) => {
-    res.render('signin');
+    res.render('signin',{error:false});
 });
 
 router.post('/signIn',postController.checkUser);
 
 
 router.get('/signUp', (req, res) => {
-    res.render('signup');
+    res.render('signup',{email: false,password:false});
 });
 
 router.post('/signUp',postController.createUser);
 
 router.get('/admin',(req,res)=>{res.render('admin page');})
+
+// router.post('/admin',upload.single('Image'),postController.addProduct);
 
 module.exports = router;

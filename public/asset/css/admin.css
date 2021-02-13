@@ -171,14 +171,19 @@ td{
 form{
     padding: 10px 15px;
 }
-input{
+
+.long-box{
+    padding-top: 10px;
+    margin: 15px 10px;
+}
+.long-box input{
+    float: right;
+    left: -10px;
     width: 50%;
     position: relative;
-    left: 100px;
     border: solid black;
     border-radius: 10px;
 }
-
 .submit{
     position: relative;
     left: 100px;

@@ -7,57 +7,51 @@ const Product = modul.product;
 
 exports.createUser = (req,res)=>{
     const name = req.body.username;
+    console.log(name)
     const email = req.body.email;
+    console.log(email)
     const password = req.body.password;
+    console.log(password)
     const conpasss = req.body.conpassword;
     const type = "user"
     const salt = bcrypt.genSaltSync(10);
 
     //check if input email exist
     Person.find({email: email}).then(result => {
-            
+
         //if return empty object mean email not exist
         if(Object.keys(result).length === 0) {
             console.log("email not found")
             
-            //check length of password
-            if(password.length>2){
+            console.log(password)
 
-                //check is password the same with confirm password
-                if(password.localeCompare(conpasss)==0){
-                    //add new person
-                    const person = new Person({
-                        name,
-                        email,
-                        password: bcrypt.hashSync(password, salt),
-                        type
-                    }).save().then(result=>{
-                    console.log(result);
-                    console.log("uploaded person")
-                    res.redirect("/signIn")
-                    }).catch(e=>{
-                        console.log(e);
-                        res.render("signIn", {error: true, message: "Password incorrect"});
-                    })
-                //password not the same
-                }else{
-                    res.render("signUp")
-                    console.log("password and confirm password must be the same")
-                }
+            //check is password the same with confirm password
+            if(password.localeCompare(conpasss)==0){
+                //add new person
+                const person = new Person({
+                    name,
+                    email,
+                    password: bcrypt.hashSync(password, salt),
+                    type
+                }).save().then(result=>{
+                console.log(result);
+                console.log("uploaded person")
+                res.redirect("/signIn")
+                }).catch(e=>{
+                    console.log(e);
+                    console.log("save error")
+                })
+            //password not the same
             }else{
-                res.render("signUp")
-                console.log("password need to be at least 8 characters")
+                res.render("signUp",{password: true ,email:false, message: "password and confirm password must be the same!"})
             }
             
         //email exist
         }else{
             console.log(result)
-            
-            res.render("signUp")
-            console.log("email is already exist")
+            res.render("signUp", {email: true,password:false, message: "email is already exist!"});
         }
     })
-    
 }
 
 exports.checkUser = (req,res)=>{
@@ -72,14 +66,12 @@ exports.checkUser = (req,res)=>{
                 res.redirect("/");
               } else {
                 // else return fail
-                res.render("signin");
-                console.log("wrong password check")
+                res.render("signIn",{error: true , message: "incorrect password or email not exist!"})
               }
             })
         }
         else {
-            res.render("signIn");
-            console.log("email doesnt exist")
+            res.render("signIn",{error:true, message: "incorrect password or email not exist!"})
         }
       }).catch(err => {
         console.log(err);
@@ -87,14 +79,40 @@ exports.checkUser = (req,res)=>{
 }
 
 // exports.addProduct = (req,res)=>{
-//     const name = req.body.name;
-//     const qty = req.body.qty;
-//     const detail = 
+//     console.log(req.file);
+//     const name = req.body.pname;
+//     const qty = req.body.pqty;
+//     const detail = req.body.pdetail;
+//     const category = req.body.pcatagory
+//     const image = {
+//         data: fs.readFileSync(path.join(__dirname + '/uploads/' + req.file.filename)),
+//         contentType: 'image/png'
+//     }
+//     const price = req.body.pprice;
+//     const discount = req.body.pdiscount;
+//     const priceAfterDC=0;
+//     if(discount!=0){
+//         priceAfterDC = price*(1-discount/100)
+//     }
 
+//     const product = new Product({
+//         name, 
+//         price,
+//         discount,
+//         priceAfterDC,
+//         detail,
+//         image,
+//         qty,
+//         category,
+//     }).save().then(product=>{
+//         console.log(product)
+//         console.log("successfully added");
+//     }).catch(e=>{
+//         console.log(e)
+//         console.log("add product fail");
+//     });
+    
 // }
-
-
-
 
 exports.getProduct = (req,res)=>{
     product.find(function(e,results){

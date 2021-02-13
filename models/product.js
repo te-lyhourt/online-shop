@@ -6,21 +6,34 @@ const productSchema = new Schema({
     type: String,
     required: true
   },
-  description: {
-    type: String,
-    required: true
-  },
   price: {
+    min:0.01,
     type: Number,
     required: true
+  },
+  discount: {
+    type: Number,
+    max:100,
+    min:0
+  },
+  priceAfterDC:{ 
+    type : Number,
+    min :0
+  },
+  description: String,
+  image:{
+    type:Buffer,
+    contentType:String
   },
   qty :{
     type: Number,
     min:1,
     required : true
   },
-  discount: Number,
-  priceAfterDC: Number,
+  category:{
+    type:String,
+    required : true
+  },
   review:[
     {
       authorName:{

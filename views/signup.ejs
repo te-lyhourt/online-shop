@@ -20,12 +20,21 @@
       </div>
       
 
-      <form action="http://localhost:3000/signUp" method="POST">
-        <p>Username</p> <input class="long-box" type="text" name="username" /> <br/>
-        <p>Email address</p> <input class="long-box"  type="text" name="email" /> <br/>
-        <p>Password</p> <input class="long-box"  type="password" name="password" /> <br/>
-        <p>Confirm Password</p> <input class="long-box" type="password" name="conpassword" /> <br/>
-        <div class="checkbox"><input  type="checkbox" id="term" name="term" > I accept Terms and Conditions <br> </div>
+      <form action="http://localhost:3000/signUp" method="POST" >
+        <p>Username</p> <input required="required" pattern="[A-Za-z0-9]{4,20}" title="Username should be 4 to 20 english letter or number " class="long-box" type="text" name="username" /> <br/>
+        <p class="email">Email address</p> 
+        <% if(email) {%>
+          <span style="color: red;"><%= message %></span>
+        <% } %>
+        <input required="required" class="long-box"  type="email" name="email" /> <br/>
+      
+        <p>Password</p>
+        <% if(password) {%>
+          <span style="color: red;"><%= message %></span>
+        <% } %>
+        <input required="required" class="long-box"  type="password" name="password" pattern=".{3,}" title="password should be atleast 3 letter"/> <br/>
+        <p>Confirm Password</p> <input required="required" class="long-box" type="password" name="conpassword" pattern=".{3,}" title="password should be atleast 3 letter"/> <br/>
+        <div class="checkbox"><input required="required" type="checkbox" id="term" name="term" > I accept Terms and Conditions <br> </div>
         <button class="long-box btn btn-primary" type="submit" id="submit" disabled>Sign Up</button> 
       </form>
     </div>

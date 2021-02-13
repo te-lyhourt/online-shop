@@ -22,8 +22,13 @@
 
       <form action="http://localhost:3000/signIn" method="POST">
        
-        <p>Email address</p> <input class="long-box"  type="text" name="email" /> <br/>
-        <p>Password</p> <input class="long-box"  type="password" name="password" /> <br/>
+        <p>Email address</p>
+        <% if(error) {%>
+          <span style="color: red;"><%= message %></span>
+        <% } %>
+        <input class="long-box"  type="email" name="email" /> <br/>
+        <p>Password</p> 
+        <input class="long-box"  type="password" name="password" pattern=".{3,}"/> <br/>
         
 
         <button class="long-box btn btn-primary" type="submit">Sign Up</button> 
