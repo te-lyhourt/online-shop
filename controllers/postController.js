@@ -3,7 +3,7 @@ const modul = require('../models/product');
 const bcrypt = require("bcryptjs");
 const Person = modul.person;
 const Product = modul.product;
-
+const fs = require('fs')
 
 exports.createUser = (req,res)=>{
     const name = req.body.username;
@@ -78,58 +78,29 @@ exports.checkUser = (req,res)=>{
     })
 }
 
-// exports.addProduct = (req,res)=>{
-//     console.log(req.file);
-//     const name = req.body.pname;
-//     const qty = req.body.pqty;
-//     const detail = req.body.pdetail;
-//     const category = req.body.pcatagory
-//     const image = {
-//         data: fs.readFileSync(path.join(__dirname + '/uploads/' + req.file.filename)),
-//         contentType: 'image/png'
-//     }
-//     const price = req.body.pprice;
-//     const discount = req.body.pdiscount;
-//     const priceAfterDC=0;
-//     if(discount!=0){
-//         priceAfterDC = price*(1-discount/100)
-//     }
-
-//     const product = new Product({
-//         name, 
-//         price,
-//         discount,
-//         priceAfterDC,
-//         detail,
-//         image,
-//         qty,
-//         category,
-//     }).save().then(product=>{
-//         console.log(product)
-//         console.log("successfully added");
-//     }).catch(e=>{
-//         console.log(e)
-//         console.log("add product fail");
-//     });
+exports.addProduct = (req,res)=>{
     
-// }
+    const price = req.body.pprice;
+    const discount = req.body.pdiscount;
+    var priceAfterDC=0;
+    if(discount!=0) priceAfterDC = price*(1-discount/100)
 
-exports.getProduct = (req,res)=>{
-    product.find(function(e,results){
-        if(e){
-            console.log(e)
-        }else{
-            console.log(results)
-        }
-    })
-}
-
-exports.getperson = (req,res)=>{
-    person.find(function(e,results){
-        if(e){
-            console.log(e)
-        }else{
-            console.log(results)
-        }
-    })
+    const product = new Product({
+        name : req.body.pname,
+        price,
+        discount,
+        priceAfterDC,
+        detail : req.body.pdetail,
+        image : req.file.filename,
+        qty : req.body.pqty,
+        category : req.body.pcatagory,
+    }).save().then(product=>{
+        console.log(product)
+        console.log("successfully added");
+        res.render("admin page")
+    }).catch(e=>{
+        console.log(e)
+        console.log("add product fail");
+        fs.unlinkSync(__dirname + "/public/asset/upload/" +image);
+    });
 }

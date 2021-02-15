@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const path = require("path");
+const fileUpload = require("express-fileupload");
 
 const app = express();
 const router = require('./routes/admin');
@@ -11,6 +12,7 @@ app.set('views', 'views');
 
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
+
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(router);
 

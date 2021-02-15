@@ -10,7 +10,15 @@ button,.btn{
     border: solid black;
     box-shadow: 10px 5px 5px 0 rgb(0,0,0,0.7) ;
 }
-
+.icon{
+    border: none;
+    background: none;
+    margin: 0;
+    box-shadow: none;
+}
+.icon:hover{
+    color: #666;
+}
 .top{
     display: flex;
     justify-content: space-between;

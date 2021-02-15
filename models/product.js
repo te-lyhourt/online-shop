@@ -14,16 +14,15 @@ const productSchema = new Schema({
   discount: {
     type: Number,
     max:100,
-    min:0
+    min:0,
   },
   priceAfterDC:{ 
     type : Number,
-    min :0
+    min :0,
   },
-  description: String,
+  detail: String,
   image:{
-    type:Buffer,
-    contentType:String
+    type:String
   },
   qty :{
     type: Number,
@@ -32,7 +31,6 @@ const productSchema = new Schema({
   },
   category:{
     type:String,
-    required : true
   },
   review:[
     {

@@ -26,9 +26,9 @@
         <% if(error) {%>
           <span style="color: red;"><%= message %></span>
         <% } %>
-        <input class="long-box"  type="email" name="email" /> <br/>
+        <input class="long-box"  type="email" name="email" required="required" /> <br/>
         <p>Password</p> 
-        <input class="long-box"  type="password" name="password" pattern=".{3,}"/> <br/>
+        <input class="long-box"  type="password" name="password" pattern=".{3,}" required="required"/> <br/>
         
 
         <button class="long-box btn btn-primary" type="submit">Sign Up</button> 
