@@ -21,7 +21,7 @@
       
 
       <form action="http://localhost:3000/signUp" method="POST" >
-        <p>Username</p> <input required="required" pattern="[A-Za-z0-9]{4,20}" title="Username should be 4 to 20 english letter or number " class="long-box" type="text" name="username" /> <br/>
+        <p>Username</p> <input required="required" pattern="[A-Za-z0-9]{4,20}" title="Username should be 4 to 20 english letter or number " class="long-box" type="text" name="username" maxlength="20"/> <br/>
         <p class="email">Email address</p> 
         <% if(email) {%>
           <span style="color: red;"><%= message %></span>

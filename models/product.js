@@ -32,6 +32,7 @@ const productSchema = new Schema({
   category:{
     type:String,
   },
+  date:String,
   review:[
     {
       authorName:{

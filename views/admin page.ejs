@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="asset/css/admin.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="asset/js/popup.js"></script>
-
+    <script src="asset/js/addNewProduct.js"></script>
 </head>
 <body>
     <div class="top">
@@ -71,7 +71,7 @@
                 </div>
 
                 <table>
-                    <tbody>
+                    <tbody class="product-container">
                         <tr>
                             <td class="image-container">                                
                                 <img class = "image"src="asset\photo\ct-2.png">
@@ -101,11 +101,11 @@
         </div>
         <div class="body">
             <form action="http://localhost:3000/admin" method="POST" enctype="multipart/form-data">
-                <div class="long-box">Product Name:<input   type="text" name="pname" required="required" /> <br/></div>
+                <div class="long-box">Product Name:<input   type="text" name="pname" required="required" maxlength="10"/> <br/></div>
                 <div class="long-box">Price:<input type="number" name="pprice" min="0.01" step="0.01" required="required"/> <br></div>
                 <div class="long-box">Qty:<input type="number" name="pqty" min="0" step="1" required="required" value="1"/><br></div>
                 <div class="long-box">Discount:<input type="number" name="pdiscount" value="0" required="required"/><br></div>
-                <div class="long-box">Detail:<input   type="text" name="pdetail" /> <br/></div>
+                <div class="long-box">Detail:<input   type="text" name="pdetail"  maxlength="50"/> <br/></div>
                 <div class="long-box">catagory:<input list="catagorys" name="pcatagory" id="catagory">
                     <datalist id="catagorys">
                       <option value="Bag">
@@ -117,7 +117,7 @@
                 <div class="long-box">Upload Image:<input type="file" name="pimg" id="Uploadimage"  required="required"><br></div>
                 <!-- <div class="long-box">Password:<input  type="password" name="admin-password" /> <br/></div> -->
 
-                <button class="long-box btn btn-primary submit" type="submit">Add Product</button>
+                <button id="btnSavePost" class="long-box btn btn-primary submit" type="submit">Add Product</button>
             </form>
         </div>
     </div>

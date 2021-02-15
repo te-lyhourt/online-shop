@@ -84,6 +84,9 @@ exports.addProduct = (req,res)=>{
     const discount = req.body.pdiscount;
     var priceAfterDC=0;
     if(discount!=0) priceAfterDC = price*(1-discount/100)
+    const date = Date.now().toLocaleString();  // 2009-11-10
+    const month = new Date().toString();
+    console.log(month);
 
     const product = new Product({
         name : req.body.pname,
@@ -94,6 +97,7 @@ exports.addProduct = (req,res)=>{
         image : req.file.filename,
         qty : req.body.pqty,
         category : req.body.pcatagory,
+        date 
     }).save().then(product=>{
         console.log(product)
         console.log("successfully added");
@@ -103,4 +107,13 @@ exports.addProduct = (req,res)=>{
         console.log("add product fail");
         fs.unlinkSync(__dirname + "/public/asset/upload/" +image);
     });
+}
+
+exports.getProduct = (req, res) => {
+    Product.find().then(products => {
+        console.log(products);
+        res.json(products);
+    }).catch(err => {
+        console.log(err);
+    });     
 }
