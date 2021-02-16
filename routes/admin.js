@@ -3,15 +3,40 @@ const router = express.Router()
 const postController = require('../controllers/postController')
 const multer = require('multer');
 const { product } = require('../models/product');
+var ObjectId = require('mongodb').ObjectID;
 
 //home page
 router.get('/', (req, res) => {
-    res.render('Home page');
+    product.find().sort({ _id: -1 }).then(products=>{
+        if(Object.keys(products).length === 0) {
+            res.render('Home page',{flag:false})
+        }else{
+            res.render('Home page', {
+                productList: products,
+                flag : true
+            })
+        }
+    }
+    ).catch(e=>{
+        console.log(e)
+    })
 });
 
 //product detail
-router.get('/product',(req,res)=>{
-    res.render('product page')
+router.get('/product/:productID',(req,res)=>{
+    const productID = req.params.productID;
+    console.log(productID)
+    product.findOne({"_id":ObjectId(productID)}).then(product=>{
+        res.render('product page',{
+            product,
+            flag: true
+        })
+    }
+
+    ).catch(e=>{
+        console.log(e)
+    })
+    
 });
 
 // sign in
@@ -48,7 +73,7 @@ router.get('/admin',(req, res) => {
 
 
 
-router.delete('/admin/product/:postId', postController.deleteProduct); 
+router.delete('/admin/:productID', postController.deleteProduct); 
 
 const storage = multer.diskStorage({
     //destination for files

@@ -71,20 +71,6 @@
 
                 <table>
                     <tbody class="parent-post">
-                        <!-- <tr>
-                            <td class="image-container">                               
-                            <img class = "image"src="/asset/photo/ct-3.png">
-                            </td>
-                            <td class="name">123<br></td>
-                            <td class="qty">123<br></td>
-                            <td class="detail">22nd,Jan 2021 <br></td>
-                            <td class="date">123<br></td>
-                            <td class="catagory">123<br></td>
-                            <td class="action">
-                                <button class="icon"><i class="fas fa-edit" <%onclick="updarteProduct(this.id)"%>></i></button>
-                                <button class="icon"><i class="far fa-trash-alt" id="123" <%onclick="deleteProduct(this.id)"%>></i></button>
-                            </td>
-                        </tr> -->
                         <% if(flag) {%>
                             <%productList.forEach(product => {%>
                             <tr>
@@ -97,8 +83,8 @@
                                 <td class="date"><%=product.date%><br></td>
                                 <td class="catagory"><%=product.catagory%><br></td>
                                 <td class="action">
-                                    <button class="icon"><i class="fas fa-edit" onclick="updarteProduct(this.id)"></i></button>
-                                    <button class="icon"><i class="far fa-trash-alt" id="<%=product._id%>" <%=onclick="deleteProduct(this.id)"%>></i></button>
+                                    <button class="icon"><i class="fas fa-edit" id="<%=product._id %>" onclick="updarteProduct(this.id)"></i></button>
+                                    <button class="icon"><i class="close-button far fa-trash-alt" id="<%=product._id %>" onclick="deleteProduct(this.id)"></i></button>
                                 </td>
                             </tr>
                             <%})%>
@@ -121,7 +107,7 @@
                 <div class="long-box">Price:<input type="number" name="pprice" min="0.01" step="0.01" required="required"/> <br></div>
                 <div class="long-box">Qty:<input type="number" name="pqty" min="0" step="1" required="required" value="1"/><br></div>
                 <div class="long-box">Discount:<input type="number" name="pdiscount" value="0" required="required"/><br></div>
-                <div class="long-box">Detail:<input   type="text" name="pdetail"  maxlength="50"/> <br/></div>
+                <div class="long-box">Detail:<input   type="text" name="pdetail"  maxlength="100"/> <br/></div>
                 <div class="long-box">catagory:<input list="catagorys" name="pcatagory" id="catagory">
                     <datalist id="catagorys">
                       <option value="Bag">

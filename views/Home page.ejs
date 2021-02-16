@@ -35,7 +35,7 @@
             <a class="nav-link need-help" href=""><i class="fas fa-question-circle"></i> Need Help</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="http://localhost:3000/signIn">
               <button type="button" class="btn btn-outline-dark">Join</button>
             </a>
           </li>
@@ -139,225 +139,41 @@
     <div class="product-section">
       <div class="row product-row">
 
-        <div class="product col-lg-3 col-md-12">
-          <a class="product-link" href="/product">
-            <div class="discount">
-              <!-- discount -->
-              <p class=" btn btn-warning">30%</p> 
+        <% if(flag) {%>
+          <%productList.forEach(product => {%>
+            <div class="product col-lg-3 col-md-12">
+              <a class="product-link" id="<%=product._id %>" href="http://localhost:3000/product/<%=product._id %>">
+                <div class="discount">
+                  <% if(product.discount!="" || product.discount!=0){%>
+                    <p class=" btn btn-warning"><%=product.discount%>%</p>
+                  <%}%>
+                  
+                </div>
+                <img src="..\..\asset\photo\loader.gif" class="lazy product-image" data-original="/asset/upload/<%=product.image%>">
+                <div class="product-description">
+                  <p>
+                    <%=product.detail %>
+                  </p>
+                </div>
+                <div class="prices">
+                  <% if(product.priceAfterDC!="" || product.discount!=0){%>
+                    <p style="color: red; text-decoration: line-through;"><%=product.price%>$</p>
+                    <p style="color: green;"><%=product.priceAfterDC%>$</p>
+                  <%}else{%>
+                    <p style="color: green;"><%=product.price%>$</p>
+                  <%}%>
+                  
+                </div>
+                <div class="cart">
+                  <button class="cart-butoon" type="button">
+                    <i class="fas fa-shopping-cart"></i>
+                    Cart
+                  </button>
+                </div>
+              </a>
             </div>
-            <img src="..\..\asset\photo\loader.gif" class="lazy product-image" data-original="../../asset/photo/clothe.png">
-            <div class="product-description">
-              <!-- description -->
-              <p>
-                Nike Women Pink Half Zip Lightweight Hooded Shirt top Athletic Stretch Size M
-              </p>
-            </div>
-            <div class="prices">
-              <p style="color: red; text-decoration: line-through;">15$</p>
-              <p style="color: green;">12$</p>
-            </div>
-            <div class="cart">
-              <button class="cart-butoon" type="button">
-                <i class="fas fa-shopping-cart"></i>
-                Cart
-              </button>
-            </div>
-          </a>
-        </div>
-
-        
-
-        <div class="product col-lg-3 col-md-12">
-          <a class="product-link" href="product pag.html">
-            <div class="discount">
-              <p class=" btn btn-warning">20%</p>
-            </div>
-            <img src="..\..\asset\photo\loader.gif" class="lazy product-image" data-original="../../asset/photo/clothe.png">
-            <div class="product-description">
-              <p>
-                Nike Women Pink Half Zip Lightweight Hooded Shirt top Athletic Stretch Size M
-              </p>
-            </div>
-            <div class="prices">
-              <p style="color: red; text-decoration: line-through;">15$</p>
-              <p style="color: green;">12$</p>
-            </div>
-            <div class="cart">
-              <button class="cart-butoon" type="button">
-                <i class="fas fa-shopping-cart"></i>
-                Cart
-              </button>
-            </div>
-          </a>
-        </div>
-
-        <div class="product col-lg-3 col-md-12">
-          <a class="product-link" href="product pag.html">
-            <div class="discount">
-              <p class=" btn btn-warning">20%</p>
-            </div>
-            <img src="..\..\asset\photo\loader.gif" class="lazy product-image" data-original="../../asset/photo/clothe.png">
-            <div class="product-description">
-              <p>
-                Nike Women Pink Half Zip Lightweight Hooded Shirt top Athletic Stretch Size M
-              </p>
-            </div>
-            <div class="prices">
-              <p style="color: red; text-decoration: line-through;">15$</p>
-              <p style="color: green;">12$</p>
-            </div>
-            <div class="cart">
-              <button class="cart-butoon" type="button">
-                <i class="fas fa-shopping-cart"></i>
-                Cart
-              </button>
-            </div>
-          </a>
-        </div>
-
-        <div class="product col-lg-3 col-md-12">
-          <a class="product-link" href="product pag.html">
-            <div class="discount">
-              <p class=" btn btn-warning">20%</p>
-            </div>
-            <img src="..\..\asset\photo\loader.gif" class="lazy product-image" data-original="../../asset/photo/clothe.png">
-            <div class="product-description">
-              <p>
-                Nike Women Pink Half Zip Lightweight Hooded Shirt top Athletic Stretch Size M
-              </p>
-            </div>
-            <div class="prices">
-              <p style="color: red; text-decoration: line-through;">15$</p>
-              <p style="color: green;">12$</p>
-            </div>
-            <div class="cart">
-              <button class="cart-butoon" type="button">
-                <i class="fas fa-shopping-cart"></i>
-                Cart
-              </button>
-            </div>
-          </a>
-        </div>
-
-        <div class="product col-lg-3 col-md-12">
-          <a class="product-link" href="product pag.html">
-            <div class="discount">
-              <p class=" btn btn-warning">20%</p>
-            </div>
-            <img src="..\..\asset\photo\loader.gif" class="lazy product-image" data-original="../../asset/photo/shopbag.png">
-            <div class="product-description">
-              <p>
-                Nike Women Pink Half Zip Lightweight Hooded Shirt top Athletic Stretch Size M
-              </p>
-            </div>
-            <div class="prices">
-              <p style="color: red; text-decoration: line-through;">15$</p>
-              <p style="color: green;">12$</p>
-            </div>
-            <div class="cart">
-              <button class="cart-butoon" type="button">
-                <i class="fas fa-shopping-cart"></i>
-                Cart
-              </button>
-            </div>
-          </a>
-        </div>
-
-        <div class="product col-lg-3 col-md-12">
-          <a class="product-link" href="product pag.html">
-            <div class="discount">
-              <p class=" btn btn-warning">20%</p>
-            </div>
-            <img src="..\..\asset\photo\loader.gif" class="lazy product-image" data-original="../../asset/photo/clothe.png">
-            <div class="product-description">
-              <p>
-                Nike Women Pink Half Zip Lightweight Hooded Shirt top Athletic Stretch Size M
-              </p>
-            </div>
-            <div class="prices">
-              <p style="color: red; text-decoration: line-through;">15$</p>
-              <p style="color: green;">12$</p>
-            </div>
-            <div class="cart">
-              <button class="cart-butoon" type="button">
-                <i class="fas fa-shopping-cart"></i>
-                Cart
-              </button>
-            </div>
-          </a>
-        </div>
-
-        <div class="product col-lg-3 col-md-12">
-          <a class="product-link" href="product pag.html">
-            <div class="discount">
-              <p class=" btn btn-warning">20%</p>
-            </div>
-            <img src="..\..\asset\photo\loader.gif" class="lazy product-image" data-original="../../asset/photo/clothe.png">
-            <div class="product-description">
-              <p>
-                Nike Women Pink Half Zip Lightweight Hooded Shirt top Athletic Stretch Size M
-              </p>
-            </div>
-            <div class="prices">
-              <p style="color: red; text-decoration: line-through;">15$</p>
-              <p style="color: green;">12$</p>
-            </div>
-            <div class="cart">
-              <button class="cart-butoon" type="button">
-                <i class="fas fa-shopping-cart"></i>
-                Cart
-              </button>
-            </div>
-          </a>
-        </div>
-
-        <div class="product col-lg-3 col-md-12">
-          <a class="product-link" href="product pag.html">
-            <div class="discount">
-              <p class=" btn btn-warning">20%</p>
-            </div>
-            <img src="..\..\asset\photo\loader.gif" class="lazy product-image" data-original="../../asset/photo/clothe.png">
-            <div class="product-description">
-              <p>
-                Nike Women Pink Half Zip Lightweight Hooded Shirt top Athletic Stretch Size M
-              </p>
-            </div>
-            <div class="prices">
-              <p style="color: red; text-decoration: line-through;">15$</p>
-              <p style="color: green;">12$</p>
-            </div>
-            <div class="cart">
-              <button class="cart-butoon" type="button">
-                <i class="fas fa-shopping-cart"></i>
-                Cart
-              </button>
-            </div>
-          </a>
-        </div>
-
-        <div class="product col-lg-3 col-md-12">
-          <a class="product-link" href="product pag.html">
-            <div class="discount">
-              <p class=" btn btn-warning">20%</p>
-            </div>
-            <img src="..\..\asset\photo\loader.gif" class="lazy product-image" data-original="../../asset/photo/shopbag.png">
-            <div class="product-description">
-              <p>
-                Nike Women Pink Half Zip Lightweight Hooded Shirt top Athletic Stretch Size M
-              </p>
-            </div>
-            <div class="prices">
-              <p style="color: red; text-decoration: line-through;">15$</p>
-              <p style="color: green;">12$</p>
-            </div>
-            <div class="cart">
-              <button class="cart-butoon" type="button">
-                <i class="fas fa-shopping-cart"></i>
-                Cart
-              </button>
-            </div>
-          </a>
-        </div>
+          <%})%>
+        <%}%>
 
       </div>
 
@@ -398,6 +214,8 @@
     });
   </script>
 
+  <script type="text/javascript" src="/asset/js/addNewProduct.js"></script>
+  
 
 
 

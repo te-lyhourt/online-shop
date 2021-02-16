@@ -10,8 +10,8 @@
   <!--stylesheet-->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css" />
-  <link rel="stylesheet" href="asset/css/styles.css">
-  <link rel="stylesheet" href="asset/css/product-style.css">
+  <link rel="stylesheet" href="/asset/css/styles.css">
+  <link rel="stylesheet" href="/asset/css/product-style.css">
   <!--Font Awesome icons-->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
   <!--google fonts -->
@@ -137,38 +137,46 @@
     <!-- product-section -->
     <div class="product-section">
       <div class="row product-container">
-        <div class="product-detail">
-          <div class="section-left">
-            <div class="discount-detail">
-              <p class=" btn btn-warning">20%</p>
+        <% if(flag) {%>
+          <div class="product-detail">
+            <div class="section-left">
+              <div class="discount-detail">
+                <% if(product.discount!="" || product.discount!=0){%>
+                  <p class=" btn btn-warning"><%=product.discount%>%</p>
+                <%}%>
+              </div>
+              <img src="/asset/upload/<%=product.image%>" class="Big-image" alt="">
+              <div class="row img-row">
+                <img src="/asset/upload/<%=product.image%>" class="small-image" alt="">
+                <img src="/asset/upload/<%=product.image%>" class="small-image" alt="">
+                <img src="/asset/upload/<%=product.image%>" class="small-image" alt="">
+              </div>
             </div>
-            <img src="../../asset/photo/clothe.png" class="Big-image" alt="">
-            <div class="row img-row">
-              <img src="../../asset/photo/clothe.png" class="small-image" alt="">
-              <img src="../../asset/photo/clothe.png" class="small-image" alt="">
-              <img src="../../asset/photo/clothe.png" class="small-image" alt="">
-            </div>
-          </div>
-          <div class="section-right">
-            <div class="description">
-              <div class="top-row">
-                <h4 class="product-name">White T-shirt - Nike</h4>
-                <div class="prices-tag">
-                  <p class="price" style="color: red; text-decoration: line-through;">15$</p>
-                  <p class="price" style="color: green;">12$</p>
+            <div class="section-right">
+              <div class="description">
+                <div class="top-row">
+                  <h4 class="product-name"><%=product.name%></h4>
+                  <div class="prices-tag">
+                    <% if(product.priceAfterDC!="" || product.discount!=0){%>
+                      <p style="color: red; text-decoration: line-through;"><%=product.price%>$</p>
+                      <p style="color: green;"><%=product.priceAfterDC%>$</p>
+                    <%}else{%>
+                      <p style="color: green;"><%=product.price%>$</p>
+                    <%}%>
+                  </div>
+                </div>
+                <p><%=product.detail %></p>
+              </div>
+              <div class="button-container">
+                <button class="cart-butoon" type="button"><i class="fas fa-shopping-cart"></i>Cart</button>
+                <div class="tag-row">
+                  <button type="button" class="btn btn-light tag-left" >Male T-shirt</button>
+                  <button type="button" class="btn btn-light tag-right">Single Color</button>
                 </div>
               </div>
-              <p>Nike Women Pink Half Zip Lightweight Hooded Shirt top Athletic Stretch Size M</p>
-            </div>
-            <div class="button-container">
-              <button class="cart-butoon" type="button"><i class="fas fa-shopping-cart"></i>Cart</button>
-              <div class="tag-row">
-                <button type="button" class="btn btn-light tag-left" >Male T-shirt</button>
-                <button type="button" class="btn btn-light tag-right">Single Color</button>
-              </div>
             </div>
           </div>
-        </div>
+        <%}%>
         <!-- comment section -->
         <h3 class="comment-title">comments</h3>
         <!--comment-->

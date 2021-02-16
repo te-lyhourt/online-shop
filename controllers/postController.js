@@ -4,6 +4,7 @@ const bcrypt = require("bcryptjs");
 const Person = modul.person;
 const Product = modul.product;
 const moment = require('moment')
+var ObjectId = require('mongodb').ObjectID;
 
 exports.createUser = (req,res)=>{
     const name = req.body.username;
@@ -107,13 +108,16 @@ exports.addProduct = (req,res)=>{
 
 exports.deleteProduct = (req, res) => {
     const productID = req.params.productID;
-    Product.findByIdAndRemove(productID)
+    // console.log("control" , productID)
+    
+    Product.deleteOne({"_id":ObjectId(productID)})
         .then(() => {
-          console.log('Post is deleted');
-          
-          location.reload("http://localhost:3000/admin"); 
+          console.log('Post is deleted'); 
         })
         .catch(err => {
           console.log(err);
     })
 }
+// exports.getProductProduct = (req,res)=>{
+//     const productID = req.params.productID;
+// }

@@ -54,6 +54,8 @@ button,.btn{
 }
 
 .right{
+    display: flex;
+    flex-direction: column;
     width: 80%;
     min-height: 640px;
     margin-bottom: 30px;
@@ -64,12 +66,12 @@ button,.btn{
 .up{
     display: flex;
     justify-content: space-between;
-    padding: 0 5% 20px;
+    padding: 0 2% 20px;
     align-items:center;
 }
 
 .down{
-    margin: 0 5%;
+    margin: 0 2%;
     border: solid black ;
     min-height: 500px;
 }
@@ -82,6 +84,7 @@ button,.btn{
     border-right: solid black;
     padding-left:  15px ;
     min-height: 495px;
+    height: inherit;
 }
 .product-action{
     padding-left:  15px;
@@ -93,7 +96,7 @@ button,.btn{
 } 
 .product-name,.name{
 
-    width: 200px;
+    width: 170px;
 
 }
 .product-qty,.qty{
@@ -103,7 +106,7 @@ button,.btn{
 }
 .product-detail,.detail{
 
-    width: 250px;
+    width: 260px;
 
 }
 .product-date,.date{
@@ -113,7 +116,7 @@ button,.btn{
 }
 .product-catagory,.catagory{
 
-    width: 150px;
+    width: 110px;
 
 }
 .action{
