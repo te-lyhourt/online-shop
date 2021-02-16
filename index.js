@@ -2,10 +2,10 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const path = require("path");
-const fileUpload = require("express-fileupload");
-
 const app = express();
 const router = require('./routes/admin');
+const cookieParser = require('cookie-parser');
+app.use(cookieParser());
 
 app.set('view engine', 'ejs');
 app.set('views', 'views');

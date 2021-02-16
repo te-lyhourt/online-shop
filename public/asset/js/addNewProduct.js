@@ -8,6 +8,7 @@ $(function () {
 
 function deleteProduct(id) {
     // console.log("js    " + id);
+    
     axios.delete('http://localhost:3000/admin/'+id)
          .then(result => {
             console.log("axios  "+result)

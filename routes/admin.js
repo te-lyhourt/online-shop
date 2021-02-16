@@ -56,21 +56,26 @@ router.post('/signUp',postController.createUser);
 
 // admin
 router.get('/admin',(req, res) => {
-    product.find().sort({ _id: -1 }).then(products=>{
-        if(Object.keys(products).length === 0) {
-            res.render('admin page',{flag:false})
-        }else{
-            res.render('admin page', {
-                productList: products,
-                flag : true
-            })
+    
+    if(req.cookies.userType=="admin"){
+        product.find().sort({ _id: -1 }).then(products=>{
+            if(Object.keys(products).length === 0) {
+                res.render('admin page',{flag:false})
+            }else{
+                res.render('admin page', {
+                    productList: products,
+                    flag : true
+                })
+            }
         }
+        ).catch(e=>{
+            console.log(e)
+        })
+    }else{
+        return res.status(400).send('u are not admin.');
     }
-    ).catch(e=>{
-        console.log(e)
-    })
+    
 })
-
 
 
 router.delete('/admin/:productID', postController.deleteProduct); 
