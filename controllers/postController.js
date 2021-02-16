@@ -3,7 +3,7 @@ const modul = require('../models/product');
 const bcrypt = require("bcryptjs");
 const Person = modul.person;
 const Product = modul.product;
-const fs = require('fs')
+const moment = require('moment')
 
 exports.createUser = (req,res)=>{
     const name = req.body.username;
@@ -79,41 +79,41 @@ exports.checkUser = (req,res)=>{
 }
 
 exports.addProduct = (req,res)=>{
-    
+    const name = req.body.pname
+    const date = moment().format('D MMM, YYYY');
+    const image = req.file.filename
     const price = req.body.pprice;
     const discount = req.body.pdiscount;
     var priceAfterDC=0;
     if(discount!=0) priceAfterDC = price*(1-discount/100)
-    const date = Date.now().toLocaleString();  // 2009-11-10
-    const month = new Date().toString();
-    console.log(month);
 
     const product = new Product({
-        name : req.body.pname,
+        date ,
+        name ,
         price,
         discount,
         priceAfterDC,
         detail : req.body.pdetail,
-        image : req.file.filename,
         qty : req.body.pqty,
         category : req.body.pcatagory,
-        date 
+        image
     }).save().then(product=>{
-        console.log(product)
         console.log("successfully added");
-        res.render("admin page")
     }).catch(e=>{
         console.log(e)
         console.log("add product fail");
-        fs.unlinkSync(__dirname + "/public/asset/upload/" +image);
     });
 }
 
-exports.getProduct = (req, res) => {
-    Product.find().then(products => {
-        console.log(products);
-        res.json(products);
-    }).catch(err => {
-        console.log(err);
-    });     
+exports.deleteProduct = (req, res) => {
+    const productID = req.params.productID;
+    Product.findByIdAndRemove(productID)
+        .then(() => {
+          console.log('Post is deleted');
+          
+          location.reload("http://localhost:3000/admin"); 
+        })
+        .catch(err => {
+          console.log(err);
+    })
 }
