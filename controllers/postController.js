@@ -6,8 +6,6 @@ const Product = modul.product;
 const moment = require('moment')
 var ObjectId = require('mongodb').ObjectID;
 
-
-
 exports.createUser = (req,res)=>{
     const name = req.body.username;
     console.log(name)
@@ -56,6 +54,19 @@ exports.createUser = (req,res)=>{
         }
     })
 }
+const person = new Person({
+    name:"admin",
+    email:"test@admin.com",
+    password: "123",
+    type:"admin"
+})
+// .save().then(result=>{
+//     console.log(result);
+//     console.log("uploaded person")
+// }).catch(e=>{
+//     console.log(e);
+//     console.log("save error")
+// })
 
 exports.checkUser = (req,res)=>{
     const email = req.body.email;

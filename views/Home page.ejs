@@ -35,9 +35,16 @@
             <a class="nav-link need-help" href=""><i class="fas fa-question-circle"></i> Need Help</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="http://localhost:3000/signIn">
-              <button type="button" class="btn btn-outline-dark">Join</button>
-            </a>
+            <%if(login){%>
+              <a href="http://localhost:3000/clear">
+                <button type="button" class="btn btn-outline-dark">log out</button>
+              </a>
+            <%}else {%>
+              <a class="nav-link" href="http://localhost:3000/signIn">
+                <button type="button" class="btn btn-outline-dark">Join</button> 
+              </a>
+              <%}%>
+            
           </li>
         </ul>
       </div>
@@ -164,13 +171,15 @@
                   <%}%>
                   
                 </div>
-                <div class="cart">
+              </a>
+              <div class="cart">
+                <a href="http://localhost:3000/checkUser">
                   <button class="cart-butoon" type="button">
                     <i class="fas fa-shopping-cart"></i>
                     Cart
                   </button>
-                </div>
-              </a>
+                </a>
+              </div>
             </div>
           <%})%>
         <%}%>

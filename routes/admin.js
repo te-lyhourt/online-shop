@@ -7,13 +7,20 @@ var ObjectId = require('mongodb').ObjectID;
 
 //home page
 router.get('/', (req, res) => {
+    if(req.cookies.userID){
+        login = true
+    }else{
+        login = false
+    }
     product.find().sort({ _id: -1 }).then(products=>{
         if(Object.keys(products).length === 0) {
-            res.render('Home page',{flag:false})
+            res.render('Home page',{flag:false,login})
         }else{
             res.render('Home page', {
                 productList: products,
-                flag : true
+                flag : true,
+                login
+
             })
         }
     }
@@ -21,6 +28,24 @@ router.get('/', (req, res) => {
         console.log(e)
     })
 });
+
+
+router.get('/checkUser',(req,res)=>{
+    if(!req.cookies.userID) {
+        res.redirect('/signIn');
+    } else {
+        res.redirect('/');
+        console.log("add to cart")
+        
+    }
+})
+
+router.get('/clear',(req,res)=>{
+    res.clearCookie('username');
+    res.clearCookie('userID');
+    res.clearCookie('userType');
+    res.redirect('/');
+})
 
 //product detail
 router.get('/product/:productID',(req,res)=>{
