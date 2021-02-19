@@ -1,220 +1,219 @@
-body{
-    padding: 0;
-    margin: 0;
-    font-family: 'Concert One', sans-serif;
-    font-size: 1.15rem;
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Concert One", sans-serif;
+  font-size: 1.15rem;
 }
 
-button,.btn{
-    margin-top: 20px;
-    border: solid black;
-    box-shadow: 10px 5px 5px 0 rgb(0,0,0,0.7) ;
+button,
+.btn {
+  margin-top: 20px;
+  border: solid black;
+  box-shadow: 10px 5px 5px 0 rgb(0, 0, 0, 0.7);
 }
-.icon{
-    border: none;
-    background: none;
-    margin: 0;
-    box-shadow: none;
+.icon {
+  border: none;
+  background: none;
+  margin: 0;
+  box-shadow: none;
 }
-.icon:hover{
-    color: #666;
+.icon:hover {
+  color: #666;
 }
-.top{
-    display: flex;
-    justify-content: space-between;
-    padding: 0 12% ;
+.top {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 12%;
 }
 
-.left{
-    width: 15%;
-    float: left;
-    color: #666;
-    height: 640px;
-    font-size: 14px;
-    
+.left {
+  width: 15%;
+  float: left;
+  color: #666;
+  height: 640px;
+  font-size: 14px;
 }
 .categoryBar {
-    width: 100%;
-    list-style-type:none;
-    padding-inline-start: 22px;
+  width: 100%;
+  list-style-type: none;
+  padding-inline-start: 22px;
 }
 .categoryBar li {
-    line-height: 40px;
-    border: solid black;
-    border-right: none ;
-    margin-top: 8px;
-    background: #f2f2f2;
+  line-height: 40px;
+  border: solid black;
+  border-right: none;
+  margin-top: 8px;
+  background: #f2f2f2;
 }
 
-.categoryBar li a{
-    text-decoration: none;
-    padding-left: 10px ;
-    font-size: 1rem;
-    color: black;
+.categoryBar li a {
+  text-decoration: none;
+  padding-left: 10px;
+  font-size: 1rem;
+  color: black;
 }
 
-.right{
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    min-height: 640px;
-    margin-bottom: 30px;
-    float: left;
-    border: solid black ;
+.right {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  min-height: 640px;
+  margin-bottom: 30px;
+  float: left;
+  border: solid black;
 }
 
-.up{
-    display: flex;
-    justify-content: space-between;
-    padding: 0 2% 20px;
-    align-items:center;
+.up {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2% 20px;
+  align-items: center;
 }
 
-.down{
-    margin: 0 2%;
-    border: solid black ;
-    min-height: 500px;
+.down {
+  margin: 0 2%;
+  border: solid black;
+  min-height: 500px;
 }
-.first-row{
-    display: flex;
-    background-color: #A9A9A9;
-    height: 60px;
+.first-row {
+  display: flex;
+  background-color: #a9a9a9;
+  height: 60px;
 }
-.product-image,.product-name,.product-qty,.product-detail,.product-date,.product-date,.product-catagory{
-    border-right: solid black;
-    padding-left:  15px ;
-    min-height: 495px;
-    height: inherit;
+.product-image,
+.product-name,
+.product-qty,
+.product-detail,
+.product-date,
+.product-date,
+.product-catagory {
+  border-right: solid black;
+  padding-left: 15px;
+  min-height: 495px;
+  height: inherit;
 }
-.product-action{
-    padding-left:  15px;
+.product-action {
+  padding-left: 15px;
 }
-.product-image,.image-container{
-    
-    width: 130px;
-  
-} 
-.product-name,.name{
+.product-image,
+.image-container {
+  width: 130px;
+}
+.product-name,
+.name {
+  width: 170px;
+}
+.product-qty,
+.qty {
+  width: 90px;
+}
+.product-detail,
+.detail {
+  width: 260px;
+}
+.product-date,
+.date {
+  width: 180px;
+}
+.product-catagory,
+.catagory {
+  width: 110px;
+}
+.action {
+  text-align: center;
+}
+i {
+  padding: 5px;
+}
+.image {
+  float: right;
+  width: 80px;
+}
+.image-container {
+  padding-right: 15px;
+}
+table {
+  width: 100%;
+}
+tr {
+  padding-top: 10px;
+}
+td {
+  padding: 0 5px;
+}
 
-    width: 170px;
-
+#popUp {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  border: solid black;
+  border-radius: 10px;
+  background-color: white;
+  z-index: 10;
+  width: 500px;
+  max-width: 80%;
+  padding: 10px 15px;
+  padding-bottom: 20px;
 }
-.product-qty,.qty{
-
-    width: 90px;
-    
+#popUp.active {
+  transform: translate(-50%, -50%) scale(1);
 }
-.product-detail,.detail{
-
-    width: 260px;
-
-}
-.product-date,.date{
-
-    width: 180px;
-
-}
-.product-catagory,.catagory{
-
-    width: 110px;
-
-}
-.action{
-    text-align: center;
-}
-i{
-    padding: 5px;
-}
-.image{
-    float: right;
-    width: 80px;
-
-}
-.image-container{
-    padding-right: 15px;
-}
-table{
-    width: 100%;
-}
-tr{
-    padding-top: 10px ;
-}
-td{
-    padding: 0 5px ;
-}
-
-#popUp{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%) scale(0);
-    transition: 200ms ease-in-out;
-    border: solid black;
-    border-radius: 10px;
-    background-color: white;
-    z-index: 10;
-    width: 500px;
-    max-width: 80%;
-    padding: 10px 15px;
-    padding-bottom: 20px;
-}
-#popUp.active{
-    transform: translate(-50%,-50%) scale(1);
-}
-.modal-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: none;
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: none;
 }
 
 .modal-header button {
-    box-shadow:none;
-    border: none;
-    outline: none;
-    background: none;
-    cursor: pointer;
+  box-shadow: none;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
 }
 
-.body{
-    padding: none;
+.body {
+  padding: none;
 }
-form{
-    padding: 10px 15px;
-}
-
-.long-box{
-    padding-top: 10px;
-    margin: 15px 10px;
-}
-.long-box input{
-    float: right;
-    left: -10px;
-    width: 50%;
-    position: relative;
-    border: solid black;
-    border-radius: 10px;
-}
-.submit{
-    position: relative;
-    left: 100px;
-    width: 50%;
-    margin-top: 40px;
+form {
+  padding: 10px 15px;
 }
 
-#overlay{
-    transition: 200ms ease-in-out;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgb(0,0,0,.5) ;
-    pointer-events: none;
-    opacity: 0;
+.long-box {
+  padding-top: 10px;
+  margin: 15px 10px;
+}
+.long-box input {
+  float: right;
+  left: -10px;
+  width: 50%;
+  position: relative;
+  border: solid black;
+  border-radius: 10px;
+}
+.submit {
+  position: relative;
+  left: 100px;
+  width: 50%;
+  margin-top: 40px;
 }
 
-#overlay.active{
-    opacity: 1;
-    pointer-events: all;
+#overlay {
+  transition: 200ms ease-in-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(0, 0, 0, 0.5);
+  pointer-events: none;
+  opacity: 0;
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
 }

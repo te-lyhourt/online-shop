@@ -1,233 +1,309 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width = device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="author" content="Lyhourt Te" />
+    <meta name="refresh" content="1" />
+    <title>Online Shopping</title>
+    <!--stylesheet-->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css"
+    />
+    <link rel="stylesheet" href="/asset/css/styles.css" />
+    <!--Font Awesome icons-->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+      integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
+      crossorigin="anonymous"
+    />
+    <!--google fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width = device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="author" content="Lyhourt Te">
-  <meta name="refresh" content="1">
-  <title>Online Shopping</title>
-  <!--stylesheet-->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css" />
-  <link rel="stylesheet" href="/asset/css/styles.css">
-  <!--Font Awesome icons-->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
-  <!--google fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
-</head>
+  <body>
+    <img
+      src="../../asset/photo/featurebackground.png"
+      alt=""
+      class="background"
+    />
+    <!--Top-->
+    <div class="container-fluid Top">
+      <!--navigation-->
 
-<body>
-  <img src="../../asset/photo/featurebackground.png" alt="" class="background">
-  <!--Top-->
-  <div class="container-fluid Top">
-    <!--navigation-->
-
-    <nav class="navbar navbar-expand-lg navbar-light ">
-      <a class="navbar-brand" href="Home page.html">Awesome <span>Shop</span></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link need-help" href=""><i class="fas fa-question-circle"></i> Need Help</a>
-          </li>
-          <li class="nav-item">
-            <%if(login){%>
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="Home page.html"
+          >Awesome <span>Shop</span></a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link need-help" href=""
+                ><i class="fas fa-question-circle"></i> Need Help</a
+              >
+            </li>
+            <li class="nav-item">
+              <%if(login){%>
               <a href="http://localhost:3000/clear">
-                <button type="button" class="btn btn-outline-dark">log out</button>
+                <button type="button" class="btn btn-outline-dark">
+                  log out
+                </button>
               </a>
-            <%}else {%>
+              <%}else {%>
               <a class="nav-link" href="http://localhost:3000/signIn">
-                <button type="button" class="btn btn-outline-dark">Join</button> 
+                <button type="button" class="btn btn-outline-dark">Join</button>
               </a>
               <%}%>
-            
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- features-section -->
+      <div class="featur">
+        <h1 class="featur-heading">Shop your designer desses</h1>
+        <p class="featur-description">
+          Ready to wear dresses tailored for your from online.Hurry up while
+          stock lasts.
+        </p>
+
+        <!--search bar-->
+        <div class="searchBar">
+          <i class="fa fa-search" aria-hidden="true"></i>
+          <input type="text" placeholder="Search your products from here" />
+        </div>
+      </div>
+    </div>
+
+    <!--promotion-->
+    <div class="container-fluid Bottom">
+      <div class="row promo-row">
+        <table class="promo-items" style="background-color: #e6739f">
+          <tr>
+            <td class="promo-text">
+              <h3>Coupon Savings</h3>
+              <p>Up to 60% off everyday essentials</p>
+              <button type="button" class="promo-button btn btn-outline-dark">
+                Shop Coupons
+              </button>
+            </td>
+            <td class="icon-box">
+              <img
+                class="promo-icon"
+                src="..\..\asset\photo\featur icon 1.png"
+                alt=""
+              />
+            </td>
+          </tr>
+        </table>
+
+        <table class="promo-items" style="background-color: #f5a25d">
+          <tr>
+            <td class="promo-text">
+              <h3>Free Delivery</h3>
+              <p>With selected items</p>
+              <button type="button" class="promo-button btn btn-outline-dark">
+                Deliver Now
+              </button>
+            </td>
+            <td class="icon-box">
+              <img
+                class="promo-icon"
+                src="..\..\asset\photo\feature icon 2.png"
+                alt=""
+              />
+            </td>
+          </tr>
+        </table>
+
+        <table class="promo-items" style="background-color: #bc6ff1">
+          <tr>
+            <td class="promo-text">
+              <h3>Gift Voucher</h3>
+              <p>with personal care items</p>
+              <button type="button" class="promo-button btn btn-outline-dark">
+                Gift Now
+              </button>
+            </td>
+            <td class="icon-box">
+              <img
+                class="promo-icon"
+                src="..\..\asset\photo\feature icon 3.png"
+                alt=""
+              />
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- product -->
+    <div class="container-fluid Bottom" id="product-container">
+      <!--  category-section-->
+      <div class="category">
+        <ul class="category-container">
+          <li class="category-item">
+            <a class="category-link">
+              <img class="category-photo" src="../../asset/photo/ct-1.png" />
+              Electronics
+            </a>
+          </li>
+          <li class="category-item">
+            <a class="category-link">
+              <img
+                class="category-photo"
+                src="../../asset/photo/ct-2.png"
+                alt=""
+              />
+              Hand Bags
+            </a>
+          </li>
+          <li class="category-item">
+            <a class="category-link">
+              <img
+                class="category-photo"
+                src="../../asset/photo/ct-3.png"
+                alt=""
+              />
+              Wallets
+            </a>
+          </li>
+          <li class="category-item">
+            <a class="category-link active">
+              <img
+                class="category-photo"
+                src="../../asset/photo/ct-4.png"
+                alt=""
+              />
+              Clothes
+            </a>
           </li>
         </ul>
       </div>
-    </nav>
-
-
-    <!-- features-section -->
-    <div class="featur">
-      <h1 class="featur-heading">Shop your designer desses</h1>
-      <p class="featur-description">Ready to wear dresses tailored for your from online.Hurry up while stock lasts.</p>
-      
-      <!--search bar-->
-      <div class="searchBar">
-        <i class="fa fa-search" aria-hidden="true"></i>
-        <input type="text" placeholder="Search your products from here">
-      </div>
-    </div>
-
-  </div>
-
-  <!--promotion-->
-  <div class="container-fluid Bottom">
-    <div class="row promo-row">
-      <table class="promo-items" style="background-color: #e6739f;">
-        <tr>
-          <td class="promo-text ">
-            <h3>Coupon Savings</h3>
-            <p>Up to 60% off everyday essentials</p>
-            <button type="button" class="promo-button btn btn-outline-dark">Shop Coupons</button>
-          </td>
-          <td class="icon-box">
-            <img class="promo-icon" src="..\..\asset\photo\featur icon 1.png" alt="">
-          </td>
-        </tr>
-      </table>
-
-      <table class="promo-items " style="background-color: #f5a25d;">
-        <tr>
-          <td class="promo-text">
-            <h3>Free Delivery</h3>
-            <p>With selected items</p>
-            <button type="button" class="promo-button btn btn-outline-dark">Deliver Now</button>
-          </td>
-          <td class="icon-box">
-            <img class="promo-icon" src="..\..\asset\photo\feature icon 2.png" alt="">
-          </td>
-        </tr>
-      </table>
-
-      <table class="promo-items" style="background-color: #bc6ff1;">
-        <tr>
-          <td class="promo-text">
-            <h3>Gift Voucher</h3>
-            <p>with personal care items</p>
-            <button type="button" class="promo-button btn btn-outline-dark">Gift Now</button>
-          </td>
-          <td class="icon-box">
-            <img class="promo-icon" src="..\..\asset\photo\feature icon 3.png" alt="">
-          </td>
-        </tr>
-      </table>
-    </div>
-  </div>
-
-  <!-- product -->
-  <div class="container-fluid Bottom" id="product-container">
-
-    <!--  category-section-->
-    <div class="category">
-      <ul class="category-container">
-        <li class="category-item">
-          <a class=" category-link">
-            <img class="category-photo" src="../../asset/photo/ct-1.png">
-            Electronics
-            
-          </a>
-        </li>
-        <li class="category-item">
-          <a class=" category-link">
-            <img class="category-photo" src="../../asset/photo/ct-2.png" alt="">
-            Hand Bags
-          </a>
-        </li>
-        <li class="category-item">
-          <a class="category-link">
-            <img class="category-photo" src="../../asset/photo/ct-3.png" alt="">
-            Wallets
-          </a>
-        </li>
-        <li class="category-item">
-          <a class=" category-link active">
-            <img class="category-photo" src="../../asset/photo/ct-4.png" alt="">
-            Clothes
-          </a>
-        </li>
-      </ul>
-    </div>
-    <!-- product-section -->
-    <div class="product-section">
-      <div class="row product-row">
-
-        <% if(flag) {%>
-          <%productList.forEach(product => {%>
-            <div class="product col-lg-3 col-md-12">
-              <a class="product-link" id="<%=product._id %>" href="http://localhost:3000/product/<%=product._id %>">
-                <div class="discount">
-                  <% if(product.discount!="" || product.discount!=0){%>
-                    <p class=" btn btn-warning"><%=product.discount%>%</p>
-                  <%}%>
-                  
-                </div>
-                <img src="..\..\asset\photo\loader.gif" class="lazy product-image" data-original="/asset/upload/<%=product.image%>">
-                <div class="product-description">
-                  <p>
-                    <%=product.detail %>
-                  </p>
-                </div>
-                <div class="prices">
-                  <% if(product.priceAfterDC!="" || product.discount!=0){%>
-                    <p style="color: red; text-decoration: line-through;"><%=product.price%>$</p>
-                    <p style="color: green;"><%=product.priceAfterDC%>$</p>
-                  <%}else{%>
-                    <p style="color: green;"><%=product.price%>$</p>
-                  <%}%>
-                  
-                </div>
-              </a>
-              <div class="cart">
-                <a href="http://localhost:3000/checkUser">
-                  <button class="cart-butoon" type="button">
-                    <i class="fas fa-shopping-cart"></i>
-                    Cart
-                  </button>
-                </a>
+      <!-- product-section -->
+      <div class="product-section">
+        <div class="row product-row">
+          <% if(flag) {%> <%productList.forEach(product => {%>
+          <div class="product col-lg-3 col-md-12">
+            <a
+              class="product-link"
+              id="<%=product._id %>"
+              href="http://localhost:3000/product/<%=product._id %>"
+            >
+              <div class="discount">
+                <% if(product.discount!="" || product.discount!=0){%>
+                <p class="btn btn-warning"><%=product.discount%>%</p>
+                <%}%>
               </div>
+              <img
+                src="..\..\asset\photo\loader.gif"
+                class="lazy product-image"
+                data-original="/asset/upload/<%=product.image%>"
+              />
+              <div class="product-description">
+                <p><%=product.detail %></p>
+              </div>
+              <div class="prices">
+                <% if(product.priceAfterDC!="" || product.discount!=0){%>
+                <p style="color: red; text-decoration: line-through">
+                  <%=product.price%>$
+                </p>
+                <p style="color: green"><%=product.priceAfterDC%>$</p>
+                <%}else{%>
+                <p style="color: green"><%=product.price%>$</p>
+                <%}%>
+              </div>
+            </a>
+            <div class="cart">
+              <a href="http://localhost:3000/checkUser">
+                <button class="cart-butoon" type="button">
+                  <i class="fas fa-shopping-cart"></i>
+                  Cart
+                </button>
+              </a>
             </div>
-          <%})%>
-        <%}%>
+          </div>
+          <%})%> <%}%>
+        </div>
 
-      </div>
-
-      <!--load more button-->
-      <div class="load-container">
-        <div class="button">
-          <button class="btn btn-success" id="loadMore">Load More</button>
+        <!--load more button-->
+        <div class="load-container">
+          <div class="button">
+            <button class="btn btn-success" id="loadMore">Load More</button>
+          </div>
         </div>
       </div>
-
     </div>
-  </div>
-  <!--jquery-->
+    <!--jquery-->
 
+    <!--boostrap script-->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+      crossorigin="anonymous"
+    ></script>
 
-  <!--boostrap script-->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <!--lazy load-->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      charset="utf-8"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery_lazyload/1.9.7/jquery.lazyload.min.js"
+      charset="utf-8"
+    ></script>
 
-  <!--lazy load-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery_lazyload/1.9.7/jquery.lazyload.min.js" charset="utf-8"></script>
+    <!--jquery-->
+    <!--function to load more product-->
+    <script>
+      $("#loadMore").click(function () {
+        $(".product-section .product:hidden").slice(0, 3).slideDown();
+        if ($(".product-section .product:hidden").length == 0) {
+          $("#loadMore").fadeOut("slow");
+        }
+      });
+    </script>
+    <!--call the function-->
+    <script>
+      $(function () {
+        $("img.lazy").lazyload();
+      });
+    </script>
 
-  <!--jquery-->
-  <!--function to load more product-->
-  <script>
-    $("#loadMore").click(function() {
-      $(".product-section .product:hidden").slice(0, 3).slideDown();
-      if ($(".product-section .product:hidden").length == 0) {
-        $("#loadMore").fadeOut("slow");
-      }
-    });
-  </script>
-  <!--call the function-->
-  <script>
-    $(function() {
-      $("img.lazy").lazyload();
-    });
-  </script>
-
-  <script type="text/javascript" src="/asset/js/addNewProduct.js"></script>
-  
-
-
-
-</body>
-
+    <script type="text/javascript" src="/asset/js/addNewProduct.js"></script>
+  </body>
 </html>
