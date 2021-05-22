@@ -18,7 +18,7 @@ app.use(router);
 
 const port = 3000;
 const url =
-  "mongodb+srv://user1:123456789Te@cluster0.rbvla.mongodb.net/online_shop?retryWrites=true&w=majority";
+  "mongodb+srv://user1:12345678Te@cluster0.rbvla.mongodb.net/online_shop?retryWrites=true&w=majority";
 mongoose
   .connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
   .then((result) => {
