@@ -153,7 +153,7 @@ exports.addProduct = (req,res)=>{
 
 exports.deleteProduct = (req, res) => {
     const productID = req.params.productID;
-    // console.log("control" , productID)
+   //delete image in file system 
     const fs = require('fs')
     
     Product.find({"_id":ObjectId(productID)}).then(result=>{
@@ -167,7 +167,7 @@ exports.deleteProduct = (req, res) => {
         })
     })
     
-            
+    //deelte product in database     
     Product.deleteOne({"_id":ObjectId(productID)})
         .then(() => {
             console.log('Post is deleted'); 

@@ -20,7 +20,6 @@ router.get('/', (req, res) => {
                 productList: products,
                 flag : true,
                 login
-
             })
         }
     }
